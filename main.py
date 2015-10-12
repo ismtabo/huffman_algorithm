@@ -22,9 +22,9 @@ LOG_FILE = 'log.csv'
 TEST = "this is an example for huffman encoding"
 
 try:
-    pass
+    dot = Digraph(comment=comment, format=formatin)
 except Exception as e:
-    print "\nGraphviz software not found.\nPlease install Graphviz software on your computer.(http://www.graphviz.org/Download.php)"
+    print "Error: Graphviz software not found.\nPlease install Graphviz software on your computer.(http://www.graphviz.org/Download.php)"
     exit(1)
 
 
