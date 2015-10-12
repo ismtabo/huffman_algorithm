@@ -14,7 +14,7 @@ from collections import defaultdict
 import csv
 import os.path
 import time
-from huffmantree import HuffmanCoding
+from huffman import HuffmanCoding
 
 DEBUG = False
 DIA_FILE = 'huffman.tree'
