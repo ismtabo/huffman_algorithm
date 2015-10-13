@@ -47,9 +47,9 @@ class HuffmanCoding(object):
 
         right = n+"1"
         # Each node has the symbol frecuency
-        graph.node(n,str(tree[0])+","\
+        graph.node(n,str(tree[0])+", \'"\
             # Symbol value if it is a leaf
-            +str(tree[1])+";\n"\
+            +(str(tree[1]))+"\'; \n"\
             # Symbol code if it is a leaf
             +n if not isinstance(tree[1],list) else str(tree[0]))
 

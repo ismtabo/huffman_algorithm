@@ -64,4 +64,5 @@ target/
 *.csv
 
 # Graph
-*.png
+*.tree
+*.tree.png

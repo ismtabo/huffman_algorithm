@@ -35,8 +35,6 @@ txtin = TEST if txtin=="" else txtin
 txtout = txtin
 symb2freq = defaultdict(int)
 for ch in txtin:
-    if ch == "":
-        ch = "SPACE"
     symb2freq[ch] += 1
 
 start = time.time()
