@@ -31,7 +31,7 @@ class HuffmanCoding(object):
             heappush(heap, (lo[0]+hi[0],[lo,hi]))
         self.tree = heap[0]
 
-    def tree_to_graph(self,tree=None,n="",comment="Huffman Coding",formatin="png"):
+    def tree_to_graph(self,tree=None,n="",comment="Huffman Coding",formatin="png",graph=None):
         """Based on the Huffman Coding it create a graph with graphviz library
 
         :param comment: graph comment
@@ -40,29 +40,31 @@ class HuffmanCoding(object):
         """
         if not tree:
             tree=self.tree
-
-        dot = Digraph(comment=comment, format=formatin)
+        if not graph:
+            graph = Digraph(comment=comment, format=formatin)
 
         left = n+"0"
 
         right = n+"1"
         # Each node has the symbol frecuency
-        dot.node(n,str(tree[0])+","\
+        graph.node(n,str(tree[0])+","\
             # Symbol value if it is a leaf
             +str(tree[1])+";\n"\
             # Symbol code if it is a leaf
             +n if not isinstance(tree[1],list) else str(tree[0]))
+
+        # In case we are not in a leaf
         if (isinstance(tree[1],list)):
-            self.tree_to_graph(tree[1][0],left)
-            self.tree_to_graph(tree[1][1],right)
+            self.tree_to_graph(tree[1][0],left,graph=graph)
+            self.tree_to_graph(tree[1][1],right,graph=graph)
             try:
-                dot.edge(n,left,label='0')
-                dot.edge(n,right,label='1')
+                graph.edge(n,left,label='0')
+                graph.edge(n,right,label='1')
             except Exception as e:
                 print n, "error"
                 raise
 
-        return dot
+        return graph
 
     def tree_to_table(self,tree=None,n=""):
         """Extracts from Huffman coding tree the symbols, giving a tables with the rows:

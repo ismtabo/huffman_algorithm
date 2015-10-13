@@ -15,6 +15,7 @@ import csv
 import os.path
 import time
 from huffman import HuffmanCoding
+from graphviz import Digraph
 
 DEBUG = False
 DIA_FILE = 'huffman.tree'
@@ -22,8 +23,9 @@ LOG_FILE = 'log.csv'
 TEST = "this is an example for huffman encoding"
 
 try:
-    dot = Digraph(comment=comment, format=formatin)
+    dot = Digraph()
 except Exception as e:
+    raise
     print "Error: Graphviz software not found.\nPlease install Graphviz software on your computer.(http://www.graphviz.org/Download.php)"
     exit(1)
 
@@ -58,7 +60,6 @@ print "Text output:",txtout
 dot = huff.tree_to_graph()
 print "\nDiagram saved at: ",DIA_FILE+'.png'
 dot.render(DIA_FILE, view=DEBUG)
-dot.render('graph.png')
 
 log_exits = os.path.isfile(LOG_FILE)
 
