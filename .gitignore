@@ -62,3 +62,6 @@ target/
 
 # Log
 *.csv
+
+# Graph
+*.png
