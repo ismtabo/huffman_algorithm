@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 """Python implementation of Huffman Coding
-
 """
 __author__ =  'Ismael Taboada'
 __version__=  '1.0'
@@ -12,7 +11,7 @@ from graphviz import Digraph
 
 
 class HuffmanCoding(object):
-    """docstring for HuffmanCoding"""
+    """HuffmanCoding implementation"""
 
     def __init__(self):
         super(HuffmanCoding, self).__init__()
@@ -32,7 +31,7 @@ class HuffmanCoding(object):
         self.tree = heap[0]
 
     def tree_to_graph(self,tree=None,n="",comment="Huffman Coding",formatin="png",graph=None):
-        """Based on the Huffman Coding it create a graph with graphviz library
+        """Based on the Huffman Coding it creates a graph with graphviz library
 
         :param comment: graph comment
         :param formatin: graph format
