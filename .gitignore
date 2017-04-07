@@ -60,3 +60,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# Log
+*.csv
+
+# Graph
+*.tree
+*.tree.png
